@@ -22,7 +22,7 @@
     </header>
     <main>
         <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
-        <table class="records">
+        <table id="tableClient" class="records">
             <thead>
                 <tr>
                     <th>Nome</th>
@@ -33,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <!-- <tr>
                     <td>Maria</td>
                     <td>maria@gmail.com</td>
                     <td>(11) 97165-1111</td>
@@ -62,7 +62,7 @@
                         <button type="button" class="button green">editar</button>
                         <button type="button" class="button red">excluir</button>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
         <div class="modal" id="modal">
@@ -72,7 +72,8 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input id="nome" type="text" class="modal-field" placeholder="Nome do Cliente" required>
+                    <input id="nome" type="text" data-index="new" class="modal-field" placeholder="Nome do Cliente"
+                        required>
                     <input id="email" type="email" class="modal-field" placeholder="e-mail do Cliente" required>
                     <input id="celular" type="text" class="modal-field" placeholder="Celular do Cliente" required>
                     <input id="cidade" type="text" class="modal-field" placeholder="Cidade do Cliente" required>
