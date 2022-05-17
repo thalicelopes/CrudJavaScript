@@ -1,8 +1,9 @@
-//Arquivo Base
 'use strict'
 
-const openModal = () => document.getElementById('modal')
-    .classList.add('active')
+const openModal = () => {
+    document.getElementById('modal').classList.add('active');
+    document.getElementById('tituloModal').textContent = "Cadastrar Cliente";
+}
 
 const closeModal = () => {
     clearFields();
@@ -106,6 +107,7 @@ const editClient = (index) => {
     client.index = index
     fillFields(client)
     openModal()
+    document.getElementById('tituloModal').textContent = "Editar Cliente";
 }
 const editDelete = (event) => {
     if (event.target.type == 'button') {
@@ -115,7 +117,7 @@ const editDelete = (event) => {
             editClient(index);
         } else {
             const client = readClient()[index]
-            const response = confirm(`Deseja realmente excluir o cliente ${client.nome}`)
+            const response = confirm(`Deseja realmente excluir o cliente ${client.nome} ? Não há como desfazer essa alteração!`)
             if (response) {
                 deleteClient(index);
                 updateTable();
@@ -125,7 +127,6 @@ const editDelete = (event) => {
     }
 }
 updateTable();
-//Eventos
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
 
